@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityStandardAssets.ImageEffects;
 public class LevelLoadTrigger : MonoBehaviour {
   public GameObject cam;
   public string levelToLoad;
+  public Text buttonPressInteract;
   Bloom camEffect;
   bool toggle;
   // Use this for initialization
@@ -18,8 +20,17 @@ public class LevelLoadTrigger : MonoBehaviour {
   }
 
   void OnTriggerEnter(Collider c) {
-    if(c.tag == "Player")
-    StartCoroutine(CameraEffects(levelToLoad));
+    if (c.tag == "Player") 
+      buttonPressInteract.text = "Press E to Interact";
+    
+  }
+  void OnTriggerStay(Collider c) {
+    if (c.tag == "Player" && Input.GetKeyDown(KeyCode.E))
+      StartCoroutine(CameraEffects(levelToLoad));
+  }
+  void OnTriggerExit(Collider c) {
+    if (c.tag == "Player")
+      buttonPressInteract.text = "";
   }
 
   IEnumerator CameraEffects(string level) {
