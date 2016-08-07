@@ -5,7 +5,9 @@ public class RotateTowardsPlayer : MonoBehaviour {
 
   public Transform player;
 
-	
+  void Awake() {
+    player = GameObject.FindGameObjectWithTag("Player").transform;
+  }
 	// Update is called once per frame
 	void Update () {
     transform.LookAt(player);

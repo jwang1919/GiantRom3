@@ -34,11 +34,12 @@ public class LevelLoadTrigger : MonoBehaviour {
   }
 
   IEnumerator CameraEffects(string level) {
-    //camEffect.bloomIntensity = -4f;
+    camEffect.bloomIntensity = -4f;
     AsyncOperation async = SceneManager.LoadSceneAsync(level);
     while (!async.isDone) {
-      //if(camEffect.bloomIntensity <=4 && camEffect.bloomIntensity >=-4)
-      //camEffect.bloomIntensity = async.progress * 100/90;
+      
+      if(camEffect.bloomIntensity <=4 && camEffect.bloomIntensity >=-4)
+      camEffect.bloomIntensity = async.progress * 100/90;
       yield return null;
     }
   }
