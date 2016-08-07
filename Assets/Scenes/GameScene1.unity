@@ -584,12 +584,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   response: 0
-  randomPrompts: 0
+  randomPrompts: 1
   Buttons:
+  - h
   - j
-  - k
   eventTimer: 2
-  delay: 0
+  delay: 1
   buttonDisplay: {fileID: 564602590}
 --- !u!23 &1366348352
 MeshRenderer:
