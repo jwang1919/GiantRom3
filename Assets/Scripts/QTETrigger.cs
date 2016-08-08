@@ -1,78 +1,82 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 using System.Collections.Generic;
+using UnityStandardAssets.Characters.FirstPerson;
 
-public class QTETrigger : MonoBehaviour {
-  public enum QTEState { Ready, Delay, Ongoing, Done };
-  public QTEState state = QTEState.Ready;
-  public enum QTEResponse { Null, Success, Fail };
-  public QTEResponse response = QTEResponse.Null;
+public class QTETrigger : MonoBehaviour
+{
+    public enum QTEState { Ready, Ongoing, Done };
+    public QTEState state = QTEState.Ready;
+    public enum QTEResponse { Null, Success, Fail };
+    public QTEResponse response = QTEResponse.Null;
 
-  public bool randomPrompts = true;
+    public List<string> Buttons = new List<string>();
+    
+    public Image buttonDisplay;
+    private int randomNumber = 0;
 
-  public List<string> Buttons = new List<string>();
-
-  public float eventTimer = 2f;
-  public float delay = 0f;
-  private int randomNumber = 0;
-  private int counter = 0;
-
-  public Text buttonDisplay;
-  void OnTriggerEnter(Collider c) {
-    if (state == QTEState.Ready && c.tag == "Player")
-      StartCoroutine(StateChange());
-  }
-
-  // Update is called once per frame
-  void Update() {
-    if (state == QTEState.Ongoing) {
-      if (randomPrompts == true) {
-        if (Input.anyKeyDown) {
-          if (Buttons[randomNumber] == Input.inputString) {
-            state = QTEState.Done;
-            response = QTEResponse.Success;
-            buttonDisplay.text = "";
-            StopCoroutine(StateChange());
-          }
+    void OnTriggerEnter(Collider c)
+    {
+        if (state == QTEState.Ready && c.tag == "Player")
+        {
+            // Modded FirstPersonController to have a static variable to freeze the script
+            FirstPersonController.pause();
+            PickRandomButton();
+            buttonDisplay.enabled = true;
         }
-      } else {
-        if (Input.anyKeyDown) {
-          if (Buttons[randomNumber] == Input.inputString) {
-            state = QTEState.Done;
-            response = QTEResponse.Success;
-            buttonDisplay.text = "";
-            StopCoroutine(StateChange());
-          }
+    }
+    
+    void Awake()
+    {
+        Buttons.Add("b");
+        Buttons.Add("g");
+        Buttons.Add("i");
+        Buttons.Add("m");
+        Buttons.Add("n");
+        Buttons.Add("o");
+        Buttons.Add("t");
+    }
+    
+    void Update()
+    {
+        if (state == QTEState.Ongoing && Input.anyKeyDown)
+        {
+            if (Input.GetKeyDown(Buttons[randomNumber]))
+            {
+                state = QTEState.Done;
+                response = QTEResponse.Success;
+                print("correct!");
+                Buttons.RemoveAt(randomNumber);
+                if (Buttons.Count == 0)
+                {
+                    state = QTEState.Done;
+                    print("woohoo your done!");
+                    buttonDisplay.enabled = false;
+                    FirstPersonController.unpause();
+                }
+                else
+                {
+                    PickRandomButton();
+                }
+            }
+            else
+            {
+                print("wrong!");
+            }
         }
-      }
     }
-  }
 
-  private IEnumerator StateChange() {
-    state = QTEState.Delay;
-    counter = 0;
-    //yield return new WaitForSeconds(delay);
-    while (counter < Buttons.Count) {
-      if (randomPrompts == true)
-        randomNumber = Random.Range(0, Buttons.Count);
-      else
-        randomNumber = 0;
+    private void PickRandomButton()
+    {
+        int count = Buttons.Count;
+        if (count > 0)
+        {
+            state = QTEState.Ongoing;
+            randomNumber = Random.Range(0, Buttons.Count);
 
-      buttonDisplay.text = Buttons[randomNumber];
-      state = QTEState.Ongoing;
-      counter++;
-      yield return new WaitForSeconds(delay);
+            // dynamically load button sprite by name, idea is to avoid hard coding as much as possible
+            buttonDisplay.sprite = Resources.Load("keys/" + Buttons[randomNumber], typeof(Sprite)) as Sprite;
+        }
     }
-    yield return new WaitForSeconds(eventTimer);
-
-    if (state == QTEState.Ongoing) {
-
-      response = QTEResponse.Fail;
-      state = QTEState.Done;
-      buttonDisplay.text = "";
-    }
-  }
-
-
+    
 }
