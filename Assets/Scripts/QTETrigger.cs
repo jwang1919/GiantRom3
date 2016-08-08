@@ -15,7 +15,7 @@ public class QTETrigger : MonoBehaviour {
 
 
   private int randomNumber = 0;
-  private float LastButtonPressed = 0f;
+
 
   void Awake() {
     CopyButtons = new List<string>(Buttons);
@@ -36,11 +36,9 @@ public class QTETrigger : MonoBehaviour {
       if (Input.GetKeyDown(Buttons[randomNumber])) {
         state = QTEState.Done;
         response = QTEResponse.Success;
-        print("correct!");
         Buttons.RemoveAt(randomNumber);
         if (Buttons.Count == 0) {
           state = QTEState.Done;
-          print("woohoo your done!");
           buttonDisplay.enabled = false;
           FirstPersonController.unpause();
           Destroy(gameObject);
@@ -54,7 +52,6 @@ public class QTETrigger : MonoBehaviour {
         buttonDisplay.enabled = false;
         Buttons.Clear();
         Buttons = new List<string>(CopyButtons);
-        print("wrong!");
       }
     }
 
@@ -63,7 +60,6 @@ public class QTETrigger : MonoBehaviour {
   private void PickRandomButton() {
     int count = Buttons.Count;
     buttonDisplay.enabled = true;
-    LastButtonPressed = Time.time;
     if (count > 0) {
       state = QTEState.Ongoing;
       randomNumber = Random.Range(0, Buttons.Count);
