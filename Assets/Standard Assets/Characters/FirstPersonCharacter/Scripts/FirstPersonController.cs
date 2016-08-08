@@ -10,6 +10,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
+        private static bool paused = false;
+
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
@@ -42,6 +44,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
         private FirstPersonController instance;
+
+        public static void pause()
+        {
+            paused = true;
+        }
+        
+        public static void unpause()
+        {
+            paused = false;
+        }
+
         // Use this for initialization
         private void Start()
         {
@@ -69,6 +82,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
+            if (paused)
+            {
+                return;
+            }
+
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
@@ -94,6 +112,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayLandingSound()
         {
+            if (paused)
+            {
+                return;
+            }
+
             m_AudioSource.clip = m_LandSound;
             m_AudioSource.Play();
             m_NextStep = m_StepCycle + .5f;
@@ -102,6 +125,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
+            if (paused)
+            {
+                return;
+            }
+
             float speed;
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
@@ -144,6 +172,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayJumpSound()
         {
+            if (paused)
+            {
+                return;
+            }
+
             m_AudioSource.clip = m_JumpSound;
             m_AudioSource.Play();
         }
@@ -151,6 +184,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void ProgressStepCycle(float speed)
         {
+            if (paused)
+            {
+                return;
+            }
+
             if (m_CharacterController.velocity.sqrMagnitude > 0 && (m_Input.x != 0 || m_Input.y != 0))
             {
                 m_StepCycle += (m_CharacterController.velocity.magnitude + (speed*(m_IsWalking ? 1f : m_RunstepLenghten)))*
@@ -170,6 +208,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayFootStepAudio()
         {
+            if (paused)
+            {
+                return;
+            }
+
             if (!m_CharacterController.isGrounded)
             {
                 return;
@@ -187,6 +230,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void UpdateCameraPosition(float speed)
         {
+            if (paused)
+            {
+                return;
+            }
+
             Vector3 newCameraPosition;
             if (!m_UseHeadBob)
             {
@@ -211,6 +259,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void GetInput(out float speed)
         {
+            if (paused)
+            {
+                speed = 0F;
+                return;
+            }
+
             // Read input
             float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
             float vertical = CrossPlatformInputManager.GetAxis("Vertical");
@@ -244,12 +298,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void RotateView()
         {
+            if (paused)
+            {
+                return;
+            }
+
             m_MouseLook.LookRotation (transform, m_Camera.transform);
         }
 
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
+            if (paused)
+            {
+                return;
+            }
+
             Rigidbody body = hit.collider.attachedRigidbody;
             //dont move the rigidbody if the character is on top of it
             if (m_CollisionFlags == CollisionFlags.Below)
