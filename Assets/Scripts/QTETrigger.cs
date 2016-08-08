@@ -22,21 +22,11 @@ public class QTETrigger : MonoBehaviour
             // Modded FirstPersonController to have a static variable to freeze the script
             FirstPersonController.pause();
             PickRandomButton();
-            buttonDisplay.enabled = true;
+            
         }
     }
     
-    void Awake()
-    {
-        Buttons.Add("b");
-        Buttons.Add("g");
-        Buttons.Add("i");
-        Buttons.Add("m");
-        Buttons.Add("n");
-        Buttons.Add("o");
-        Buttons.Add("t");
-    }
-    
+
     void Update()
     {
         if (state == QTEState.Ongoing && Input.anyKeyDown)
@@ -61,6 +51,10 @@ public class QTETrigger : MonoBehaviour
             }
             else
             {
+              state = QTEState.Ready;
+              response = QTEResponse.Null;
+              FirstPersonController.unpause();
+              buttonDisplay.enabled = false;
                 print("wrong!");
             }
         }
@@ -69,6 +63,7 @@ public class QTETrigger : MonoBehaviour
     private void PickRandomButton()
     {
         int count = Buttons.Count;
+        buttonDisplay.enabled = true;
         if (count > 0)
         {
             state = QTEState.Ongoing;
