@@ -13,7 +13,10 @@ public class QTETrigger : MonoBehaviour
     public List<string> Buttons = new List<string>();
     public List<string> CopyButtons;
     public Image buttonDisplay;
+    public float delay = 1f;
+
     private int randomNumber = 0;
+    private float LastButtonPressed = 0f;
 
     void Awake() {
       CopyButtons = new List<string>(Buttons);
@@ -71,6 +74,7 @@ public class QTETrigger : MonoBehaviour
     {
         int count = Buttons.Count;
         buttonDisplay.enabled = true;
+        LastButtonPressed = Time.time;
         if (count > 0)
         {
             state = QTEState.Ongoing;
