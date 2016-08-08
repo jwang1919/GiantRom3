@@ -11,9 +11,13 @@ public class QTETrigger : MonoBehaviour
     public QTEResponse response = QTEResponse.Null;
 
     public List<string> Buttons = new List<string>();
-    
+    public List<string> CopyButtons;
     public Image buttonDisplay;
     private int randomNumber = 0;
+
+    void Awake() {
+      CopyButtons = new List<string>(Buttons);
+    }
 
     void OnTriggerEnter(Collider c)
     {
@@ -43,6 +47,7 @@ public class QTETrigger : MonoBehaviour
                     print("woohoo your done!");
                     buttonDisplay.enabled = false;
                     FirstPersonController.unpause();
+                    Destroy(gameObject);
                 }
                 else
                 {
@@ -55,6 +60,8 @@ public class QTETrigger : MonoBehaviour
               response = QTEResponse.Null;
               FirstPersonController.unpause();
               buttonDisplay.enabled = false;
+              Buttons.Clear();
+              Buttons = new List<string>(CopyButtons);
                 print("wrong!");
             }
         }
