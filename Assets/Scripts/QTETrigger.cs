@@ -38,8 +38,8 @@ public class QTETrigger : MonoBehaviour {
         state = QTEState.Done;
         response = QTEResponse.Success;
         Buttons.RemoveAt(randomNumber);
-        PlayRandomSuccessSound();
         if (Buttons.Count == 0) {
+          PlayRandomSuccessSound();
           buttonDisplay.enabled = false;                    
           state = QTEState.Done;
         } else {
