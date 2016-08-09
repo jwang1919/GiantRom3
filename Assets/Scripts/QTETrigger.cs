@@ -8,9 +8,14 @@ public class QTETrigger : MonoBehaviour {
   public QTEState state = QTEState.Ready;
   public enum QTEResponse { Null, Success, Fail };
   public QTEResponse response = QTEResponse.Null;
+
     
   public List<AudioClip> successSounds = new List<AudioClip>();
   public List<AudioClip> failSounds = new List<AudioClip>();
+
+
+  public bool shouldObjectBeDestroyed = false;
+
   public List<string> Buttons = new List<string>();
   public List<string> CopyButtons;
   public Image buttonDisplay;
@@ -42,6 +47,14 @@ public class QTETrigger : MonoBehaviour {
           PlayRandomSuccessSound();
           buttonDisplay.enabled = false;                    
           state = QTEState.Done;
+
+          buttonDisplay.enabled = false;
+          FirstPersonController.unpause();
+          if (shouldObjectBeDestroyed)
+            Destroy(gameObject);
+          else
+            gameObject.SetActive(false);
+
         } else {
           PickRandomButton();
         }
