@@ -9,6 +9,7 @@ public class QTETrigger : MonoBehaviour {
   public enum QTEResponse { Null, Success, Fail };
   public QTEResponse response = QTEResponse.Null;
 
+  public bool shouldObjectBeDestroyed = false;
   public List<string> Buttons = new List<string>();
   public List<string> CopyButtons;
   public Image buttonDisplay;
@@ -41,7 +42,10 @@ public class QTETrigger : MonoBehaviour {
           state = QTEState.Done;
           buttonDisplay.enabled = false;
           FirstPersonController.unpause();
-          Destroy(gameObject);
+          if (shouldObjectBeDestroyed)
+            Destroy(gameObject);
+          else
+            gameObject.SetActive(false);
         } else {
           PickRandomButton();
         }
