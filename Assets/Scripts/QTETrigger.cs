@@ -8,17 +8,20 @@ public class QTETrigger : MonoBehaviour {
   public QTEState state = QTEState.Ready;
   public enum QTEResponse { Null, Success, Fail };
   public QTEResponse response = QTEResponse.Null;
-
+    
+  public List<AudioClip> successSounds = new List<AudioClip>();
+  public List<AudioClip> failSounds = new List<AudioClip>();
   public List<string> Buttons = new List<string>();
   public List<string> CopyButtons;
   public Image buttonDisplay;
-
+  public bool randomize;
 
   private int randomNumber = 0;
-
+  private AudioSource audioSource;
 
   void Awake() {
     CopyButtons = new List<string>(Buttons);
+    audioSource = GetComponent<AudioSource>();
   }
 
   void OnTriggerEnter(Collider c) {
@@ -26,10 +29,8 @@ public class QTETrigger : MonoBehaviour {
       // Modded FirstPersonController to have a static variable to freeze the script
       FirstPersonController.pause();
       PickRandomButton();
-
     }
   }
-
 
   void Update() {
     if (state == QTEState.Ongoing && Input.anyKeyDown) {
@@ -37,24 +38,28 @@ public class QTETrigger : MonoBehaviour {
         state = QTEState.Done;
         response = QTEResponse.Success;
         Buttons.RemoveAt(randomNumber);
+        PlayRandomSuccessSound();
         if (Buttons.Count == 0) {
+          buttonDisplay.enabled = false;                    
           state = QTEState.Done;
-          buttonDisplay.enabled = false;
-          FirstPersonController.unpause();
-          Destroy(gameObject);
         } else {
           PickRandomButton();
         }
       } else {
+        PlayRandomFailSound();
         state = QTEState.Ready;
         response = QTEResponse.Null;
         FirstPersonController.unpause();
         buttonDisplay.enabled = false;
         Buttons.Clear();
-        Buttons = new List<string>(CopyButtons);
+        Buttons.AddRange(CopyButtons);
       }
     }
 
+    if (state == QTEState.Done && !audioSource.isPlaying) {
+      FirstPersonController.unpause();
+      Destroy(gameObject);
+    }
   }
 
   private void PickRandomButton() {
@@ -62,12 +67,34 @@ public class QTETrigger : MonoBehaviour {
     buttonDisplay.enabled = true;
     if (count > 0) {
       state = QTEState.Ongoing;
-      randomNumber = Random.Range(0, Buttons.Count);
+      if (randomize) {
+        randomNumber = Random.Range(0, Buttons.Count);
+      }
 
       // dynamically load button sprite by name, idea is to avoid hard coding as much as possible
       buttonDisplay.sprite = Resources.Load("keys/" + Buttons[randomNumber], typeof(Sprite)) as Sprite;
     }
 
   }
+
+  private void PlayRandomSuccessSound() {
+    int count = successSounds.Count;
+
+    if (count > 0){
+      audioSource.Stop();
+      audioSource.clip = successSounds[Random.Range(0, count)];
+      audioSource.Play();
+    }
+  }
+
+   private void PlayRandomFailSound() {
+     int count = failSounds.Count;
+
+     if (count > 0) {
+       audioSource.Stop();
+       audioSource.clip = failSounds[Random.Range(0, count)];
+       audioSource.Play();
+     }
+   }
 
 }
