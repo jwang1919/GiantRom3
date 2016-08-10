@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityStandardAssets.Characters.FirstPerson;
 
+[RequireComponent (typeof (AudioSource))]
 public class QTETrigger : MonoBehaviour {
   public enum QTEState { Ready, Ongoing, Done };
   public QTEState state = QTEState.Ready;
@@ -47,14 +48,6 @@ public class QTETrigger : MonoBehaviour {
           PlayRandomSuccessSound();
           buttonDisplay.enabled = false;                    
           state = QTEState.Done;
-
-          buttonDisplay.enabled = false;
-          FirstPersonController.unpause();
-          if (shouldObjectBeDestroyed)
-            Destroy(gameObject);
-          else
-            gameObject.SetActive(false);
-
         } else {
           PickRandomButton();
         }
@@ -71,7 +64,11 @@ public class QTETrigger : MonoBehaviour {
 
     if (state == QTEState.Done && !audioSource.isPlaying) {
       FirstPersonController.unpause();
-      Destroy(gameObject);
+      if (shouldObjectBeDestroyed)
+        Destroy(gameObject);
+      else {
+        gameObject.SetActive(false);
+      }
     }
   }
 
@@ -93,7 +90,7 @@ public class QTETrigger : MonoBehaviour {
   private void PlayRandomSuccessSound() {
     int count = successSounds.Count;
 
-    if (count > 0){
+    if (count > 0 && audioSource != null){
       audioSource.Stop();
       audioSource.clip = successSounds[Random.Range(0, count)];
       audioSource.Play();
@@ -103,7 +100,7 @@ public class QTETrigger : MonoBehaviour {
    private void PlayRandomFailSound() {
      int count = failSounds.Count;
 
-     if (count > 0) {
+     if (count > 0 && audioSource != null) {
        audioSource.Stop();
        audioSource.clip = failSounds[Random.Range(0, count)];
        audioSource.Play();
