@@ -121,12 +121,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   response: 0
+  successSounds:
+  - {fileID: 8300000, guid: 06c9b56bddace0a44a151ed6effdfede, type: 3}
+  - {fileID: 8300000, guid: d2fabd92a9a8aec4791d72e45bb48436, type: 3}
+  failSounds:
+  - {fileID: 8300000, guid: b43b44bc65af3b54da92d5ea699828ee, type: 3}
+  - {fileID: 8300000, guid: dd3354cec4be3bb408c14ecd46a1d523, type: 3}
+  - {fileID: 8300000, guid: ff15f73722b95c045b322c70fcc67e03, type: 3}
+  - {fileID: 8300000, guid: 98cc1a3e3d26ffe4f986289a2247cbc3, type: 3}
   shouldObjectBeDestroyed: 0
   Buttons:
   - a
   - f
   CopyButtons: []
   buttonDisplay: {fileID: 0}
+  randomize: 0
 --- !u!135 &135000010026076464
 SphereCollider:
   m_ObjectHideFlags: 1
