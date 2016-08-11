@@ -17,22 +17,11 @@ public class SimpleAI : MonoBehaviour {
   private void Awake() {
     navmesh = GetComponent<NavMeshAgent>();
     maxWaypoint = waypoints.Length - 1;
-    cam = GameObject.FindGameObjectWithTag("SecondaryCamera");
-    cam.SetActive(false);
+
   }
 
   private void Update() {
-    Debug.DrawRay(transform.position, transform.forward * 5);
-    RaycastHit hit;
-    if (Physics.Raycast(transform.position, transform.forward*5f, out hit)) {
-      Debug.Log(hit.collider.tag);
-      if (hit.collider.tag == "Player") {
-        cam.SetActive(true);
-        Destroy(hit.collider.gameObject);
-        SceneManager.LoadScene("WaypointSystem");
-      }
-      
-    }
+
     Route();
   }
 
@@ -56,7 +45,33 @@ public class SimpleAI : MonoBehaviour {
       }
     }
 
-    navmesh.SetDestination(waypoints[currentWaypoint].position);
+    Debug.DrawRay(transform.position, transform.forward * 30f,Color.red);
+    RaycastHit hit;
+    if (Physics.Raycast(transform.position, transform.forward, out hit, 30f)) {
+
+      Debug.Log(hit.collider.tag);
+      if (hit.collider.tag == "Player") {
+        Debug.Log("Who's there?");
+        navmesh.SetDestination(hit.transform.position);
+        transform.LookAt(hit.transform);
+        
+        Debug.DrawRay(transform.position, transform.forward * 5f);
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 5f)) {
+          if (hit.collider.tag == "Player") {
+            GameObject.FindGameObjectWithTag("SecondaryCamera").SetActive(true);
+            Destroy(hit.collider.gameObject);
+            SceneManager.LoadScene("WaypointSystem");
+          }
+        }
+      } else {
+        navmesh.SetDestination(waypoints[currentWaypoint].position);
+      }
+
+    } else {
+      navmesh.SetDestination(waypoints[currentWaypoint].position);
+    }
+      
+   
   }
 
 
