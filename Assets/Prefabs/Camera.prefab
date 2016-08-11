@@ -307,9 +307,9 @@ MonoBehaviour:
   - f
   - space
   - tab
-  CopyButtons: []
   buttonDisplay: {fileID: 0}
   randomize: 0
+  nextObjectToActivate: {fileID: 0}
 --- !u!135 &135000013770417554
 SphereCollider:
   m_ObjectHideFlags: 1
