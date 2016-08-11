@@ -8,7 +8,7 @@ public class LevelObjectsCompleted : MonoBehaviour {
   bool levelCompleted;
 	// Use this for initialization
 	void Awake () {
-    loader.SetActive(false);
+      loader.SetActive(false);
 	}
 	
 	// Update is called once per frame

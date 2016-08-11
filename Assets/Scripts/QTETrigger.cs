@@ -18,10 +18,12 @@ public class QTETrigger : MonoBehaviour {
   public bool shouldObjectBeDestroyed = false;
 
   public List<string> Buttons = new List<string>();
-  public List<string> CopyButtons;
+  
   public Image buttonDisplay;
   public bool randomize;
+  public GameObject nextObjectToActivate;
 
+  private List<string> CopyButtons;
   private int randomNumber = 0;
   private AudioSource audioSource;
 
@@ -64,6 +66,9 @@ public class QTETrigger : MonoBehaviour {
 
     if (state == QTEState.Done && !audioSource.isPlaying) {
       FirstPersonController.unpause();
+      if (nextObjectToActivate != null) {
+        nextObjectToActivate.SetActive(true);
+      }
       if (shouldObjectBeDestroyed)
         Destroy(gameObject);
       else {
