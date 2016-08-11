@@ -13,15 +13,17 @@ public class SimpleAI : MonoBehaviour {
 
   private int currentWaypoint = 0;
   private int maxWaypoint;
+  private AudioSource source;
+
 
   private void Awake() {
     navmesh = GetComponent<NavMeshAgent>();
     maxWaypoint = waypoints.Length - 1;
+    source = GetComponent<AudioSource>();
 
   }
 
-  private void Update() {
-
+  private void FixedUpdate() {
     Route();
   }
 
@@ -48,10 +50,11 @@ public class SimpleAI : MonoBehaviour {
     Debug.DrawRay(transform.position, transform.forward * 30f,Color.red);
     RaycastHit hit;
     if (Physics.Raycast(transform.position, transform.forward, out hit, 30f)) {
-
+      
       Debug.Log(hit.collider.tag);
       if (hit.collider.tag == "Player") {
         Debug.Log("Who's there?");
+        source.Play();
         navmesh.SetDestination(hit.transform.position);
         transform.LookAt(hit.transform);
         
