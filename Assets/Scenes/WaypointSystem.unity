@@ -740,6 +740,7 @@ MonoBehaviour:
   - {fileID: 2015079082}
   - {fileID: 1571681797}
   minWaypointDist: 0.2
+  spottedClip: {fileID: 0}
 --- !u!195 &1622009199
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -982,7 +983,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7566654cff314284192ee98eddc30d41, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9f49ff7d47dbcf34b9ff84e9014b4e13, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1035,7 +1036,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1065,6 +1066,7 @@ MonoBehaviour:
   - {fileID: 1845170844}
   - {fileID: 1599633971}
   minWaypointDist: 0
+  spottedClip: {fileID: 8300000, guid: 9f49ff7d47dbcf34b9ff84e9014b4e13, type: 3}
 --- !u!195 &1908162567
 NavMeshAgent:
   m_ObjectHideFlags: 0

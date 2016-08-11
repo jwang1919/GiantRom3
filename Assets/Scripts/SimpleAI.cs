@@ -10,10 +10,12 @@ public class SimpleAI : MonoBehaviour {
   public Transform[] waypoints;
 
   public float minWaypointDist = .2f;
+  public AudioClip spottedClip;
 
   private int currentWaypoint = 0;
   private int maxWaypoint;
   private AudioSource source;
+  private bool spotted = false;
 
 
   private void Awake() {
@@ -53,8 +55,11 @@ public class SimpleAI : MonoBehaviour {
       
       Debug.Log(hit.collider.tag);
       if (hit.collider.tag == "Player") {
-        Debug.Log("Who's there?");
-        source.Play();
+        if (spotted == false && source != null) {
+          Debug.Log("Who's there?");
+          source.PlayOneShot(spottedClip);
+          spotted = true;
+        }
         navmesh.SetDestination(hit.transform.position);
         transform.LookAt(hit.transform);
         
@@ -68,13 +73,15 @@ public class SimpleAI : MonoBehaviour {
         }
       } else {
         navmesh.SetDestination(waypoints[currentWaypoint].position);
+        spotted = false;
       }
 
     } else {
       navmesh.SetDestination(waypoints[currentWaypoint].position);
+      spotted = false;
     }
-      
-   
+
+    
   }
 
 
