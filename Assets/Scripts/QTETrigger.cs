@@ -18,10 +18,11 @@ public class QTETrigger : MonoBehaviour {
   public bool shouldObjectBeDestroyed = false;
 
   public List<string> Buttons = new List<string>();
+  
   public Image buttonDisplay;
   public bool randomize;
   public GameObject nextObjectToActivate;
-    
+
   private List<string> CopyButtons;
   private int randomNumber = 0;
   private AudioSource audioSource;
