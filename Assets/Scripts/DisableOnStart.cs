@@ -3,13 +3,10 @@ using System.Collections;
 
 public class DisableOnStart : MonoBehaviour {
 
-    public bool disableOnStart = false;
+    public bool disableOnStart = true;
 
 	void Start () {
         gameObject.SetActive(!disableOnStart);
 	}
 	
-	void Update () {
-	 // do nothing
-	}
 }
