@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.77.0 commit date:2016-04-05, commit time:18:12, hash:abf6f08</authoring_tool>
     </contributor>
-    <created>2016-08-12T00:00:11</created>
-    <modified>2016-08-12T00:00:11</modified>
+    <created>2016-08-12T00:08:34</created>
+    <modified>2016-08-12T00:08:34</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -1027,39 +1027,6 @@
         </polylist>
       </mesh>
     </geometry>
-    <geometry id="Cube_030-mesh" name="Cube.030">
-      <mesh>
-        <source id="Cube_030-mesh-positions">
-          <float_array id="Cube_030-mesh-positions-array" count="24">-10 -10 -10 -10 -10 10 -10 10 -10 -10 10 10 10 -10 -10 10 -10 10 10 10 -10 10 10 10</float_array>
-          <technique_common>
-            <accessor source="#Cube_030-mesh-positions-array" count="8" stride="3">
-              <param name="X" type="float"/>
-              <param name="Y" type="float"/>
-              <param name="Z" type="float"/>
-            </accessor>
-          </technique_common>
-        </source>
-        <source id="Cube_030-mesh-normals">
-          <float_array id="Cube_030-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
-          <technique_common>
-            <accessor source="#Cube_030-mesh-normals-array" count="6" stride="3">
-              <param name="X" type="float"/>
-              <param name="Y" type="float"/>
-              <param name="Z" type="float"/>
-            </accessor>
-          </technique_common>
-        </source>
-        <vertices id="Cube_030-mesh-vertices">
-          <input semantic="POSITION" source="#Cube_030-mesh-positions"/>
-        </vertices>
-        <polylist count="12">
-          <input semantic="VERTEX" source="#Cube_030-mesh-vertices" offset="0"/>
-          <input semantic="NORMAL" source="#Cube_030-mesh-normals" offset="1"/>
-          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
-          <p>3 0 0 0 1 0 7 1 2 1 3 1 5 2 6 2 7 2 1 3 4 3 5 3 2 4 4 4 0 4 7 5 1 5 5 5 3 0 2 0 0 0 7 1 6 1 2 1 5 2 4 2 6 2 1 3 0 3 4 3 2 4 6 4 4 4 7 5 3 5 1 5</p>
-        </polylist>
-      </mesh>
-    </geometry>
     <geometry id="Cube_031-mesh" name="Cube.031">
       <mesh>
         <source id="Cube_031-mesh-positions">
@@ -1455,27 +1422,27 @@
         <instance_geometry url="#Cube_011-mesh" name="_ndFloor-Box7"/>
       </node>
       <node id="_ndFloor-Box8" name="_ndFloor-Box8" type="NODE">
-        <matrix sid="transform">1.5 0 0 -352.259 0 1.5 0 0 0 0 1.5 211.8495 0 0 0 1</matrix>
+        <matrix sid="transform">1.5 0 0 -352.259 0 1.5 0 0 0 0 1.5 240.9062 0 0 0 1</matrix>
         <instance_geometry url="#Cube_012-mesh" name="_ndFloor-Box8"/>
       </node>
       <node id="_ndFloor-Box9" name="_ndFloor-Box9" type="NODE">
-        <matrix sid="transform">1.5 0 0 -341.6242 0 1.5 0 36.8644 0 0 1.5 211.8495 0 0 0 1</matrix>
+        <matrix sid="transform">1.5 0 0 -341.6242 0 1.5 0 36.8644 0 0 1.5 240.9062 0 0 0 1</matrix>
         <instance_geometry url="#Cube_013-mesh" name="_ndFloor-Box9"/>
       </node>
       <node id="_ndFloor-Box10" name="_ndFloor-Box10" type="NODE">
-        <matrix sid="transform">1.5 0 0 -336.1249 0 1.5 0 -30.49063 0 0 1.5 211.8495 0 0 0 1</matrix>
+        <matrix sid="transform">1.5 0 0 -336.1249 0 1.5 0 -30.49063 0 0 1.5 240.9062 0 0 0 1</matrix>
         <instance_geometry url="#Cube_014-mesh" name="_ndFloor-Box10"/>
       </node>
       <node id="_ndFloor-Box12" name="_ndFloor-Box12" type="NODE">
-        <matrix sid="transform">1.5 0 0 -336.1249 0 1.5 0 -14.60585 0 0 1.5 241.8495 0 0 0 1</matrix>
+        <matrix sid="transform">1.5 0 0 -336.1249 0 1.5 0 -14.60585 0 0 1.5 270.9062 0 0 0 1</matrix>
         <instance_geometry url="#Cube_016-mesh" name="_ndFloor-Box12"/>
       </node>
       <node id="_ndFloor-Box11" name="_ndFloor-Box11" type="NODE">
-        <matrix sid="transform">1.5 0 0 -336.1249 0 1.5 0 18.11697 0 0 1.5 241.5175 0 0 0 1</matrix>
+        <matrix sid="transform">1.5 0 0 -336.1249 0 1.5 0 51.8984 0 0 1.5 270.5742 0 0 0 1</matrix>
         <instance_geometry url="#Cube_017-mesh" name="_ndFloor-Box11"/>
       </node>
       <node id="_ndFloor-Box13" name="_ndFloor-Box13" type="NODE">
-        <matrix sid="transform">1.5 0 0 -341.9027 0 1.5 0 18.11697 0 0 1.5 241.8495 0 0 0 1</matrix>
+        <matrix sid="transform">1.5 0 0 -341.9027 0 1.5 0 18.11697 0 0 1.5 270.9062 0 0 0 1</matrix>
         <instance_geometry url="#Cube_018-mesh" name="_ndFloor-Box13"/>
       </node>
       <node id="_rdFloor-Box1" name="_rdFloor-Box1" type="NODE">
@@ -1483,7 +1450,7 @@
         <instance_geometry url="#Cube_019-mesh" name="_rdFloor-Box1"/>
       </node>
       <node id="_rdFloor-Box2" name="_rdFloor-Box2" type="NODE">
-        <matrix sid="transform">1.5 0 0 -351.2018 0 1.5 0 -17.91702 0 0 1.5 467.6395 0 0 0 1</matrix>
+        <matrix sid="transform">1.5 0 0 -351.2018 0 1.5 0 -17.91702 0 0 1.5 467.3326 0 0 0 1</matrix>
         <instance_geometry url="#Cube_020-mesh" name="_rdFloor-Box2"/>
       </node>
       <node id="_rdFloor-Box3" name="_rdFloor-Box3" type="NODE">
@@ -1507,27 +1474,23 @@
         <instance_geometry url="#Cube_025-mesh" name="_rdFloor-Box7"/>
       </node>
       <node id="_rdFloor-Box8" name="_rdFloor-Box8" type="NODE">
-        <matrix sid="transform">1.5 0 0 -365.2224 0 1.5 0 16.46063 0 0 1.5 467.6395 0 0 0 1</matrix>
+        <matrix sid="transform">1.5 0 0 -365.2224 0 1.5 0 16.46063 0 0 1.5 467.3326 0 0 0 1</matrix>
         <instance_geometry url="#Cube_026-mesh" name="_rdFloor-Box8"/>
       </node>
       <node id="_rdFloor-Box9" name="_rdFloor-Box9" type="NODE">
-        <matrix sid="transform">1.5 0 0 -439.7586 0 1.5 0 -95.13285 0 0 1.5 440.3135 0 0 0 1</matrix>
+        <matrix sid="transform">1.5 0 0 -439.7586 0 1.5 0 -95.13285 0 0 1.5 468.3561 0 0 0 1</matrix>
         <instance_geometry url="#Cube_027-mesh" name="_rdFloor-Box9"/>
       </node>
       <node id="_rdFloor-Box10" name="_rdFloor-Box10" type="NODE">
-        <matrix sid="transform">1.5 0 0 -439.7586 0 1.5 0 -95.13285 0 0 1.5 467.6395 0 0 0 1</matrix>
+        <matrix sid="transform">1.5 0 0 -439.7586 0 1.5 0 -95.13285 0 0 1.5 495.6821 0 0 0 1</matrix>
         <instance_geometry url="#Cube_028-mesh" name="_rdFloor-Box10"/>
       </node>
       <node id="_rdFloor-Box11" name="_rdFloor-Box11" type="NODE">
-        <matrix sid="transform">1.5 0 0 -435.584 0 1.5 0 -95.13285 0 0 1.5 497.6396 0 0 0 1</matrix>
+        <matrix sid="transform">1.5 0 0 -435.584 0 1.5 0 -95.13285 0 0 1.5 525.6821 0 0 0 1</matrix>
         <instance_geometry url="#Cube_029-mesh" name="_rdFloor-Box11"/>
       </node>
-      <node id="_rdFloor-Box12" name="_rdFloor-Box12" type="NODE">
-        <matrix sid="transform">1.5 0 0 -351.2018 0 1.5 0 -17.91702 0 0 1.5 440.3135 0 0 0 1</matrix>
-        <instance_geometry url="#Cube_030-mesh" name="_rdFloor-Box12"/>
-      </node>
       <node id="_rdFloor-Box13" name="_rdFloor-Box13" type="NODE">
-        <matrix sid="transform">1.5 0 0 -365.9522 0 1.5 0 -5.943016 0 0 1.5 497.6396 0 0 0 1</matrix>
+        <matrix sid="transform">1.5 0 0 -365.9522 0 1.5 0 -5.943016 0 0 1.5 497.3326 0 0 0 1</matrix>
         <instance_geometry url="#Cube_031-mesh" name="_rdFloor-Box13"/>
       </node>
       <node id="_rdFloor-Box14" name="_rdFloor-Box14" type="NODE">
