@@ -69,6 +69,10 @@ ModelImporter:
     100122: TomatoSauce
     100124: TomatoSauceText
     100126: TomatoText
+    100128: Loudspeaker1
+    100130: Loudspeaker1.001
+    100132: Loudspeaker1.002
+    100134: Loudspeaker1.003
     400000: AmericanCheeseText
     400002: AmericanHolder
     400004: BBQSauce
@@ -133,6 +137,10 @@ ModelImporter:
     400122: TomatoSauce
     400124: TomatoSauceText
     400126: TomatoText
+    400128: Loudspeaker1
+    400130: Loudspeaker1.001
+    400132: Loudspeaker1.002
+    400134: Loudspeaker1.003
     2300000: AmericanCheeseText
     2300002: AmericanHolder
     2300004: BBQSauce
@@ -194,6 +202,10 @@ ModelImporter:
     2300116: TomatoSauce
     2300118: TomatoSauceText
     2300120: TomatoText
+    2300122: Loudspeaker1
+    2300124: Loudspeaker1.001
+    2300126: Loudspeaker1.002
+    2300128: Loudspeaker1.003
     3300000: AmericanCheeseText
     3300002: AmericanHolder
     3300004: BBQSauce
@@ -255,6 +267,10 @@ ModelImporter:
     3300116: TomatoSauce
     3300118: TomatoSauceText
     3300120: TomatoText
+    3300122: Loudspeaker1
+    3300124: Loudspeaker1.001
+    3300126: Loudspeaker1.002
+    3300128: Loudspeaker1.003
     4300000: DogFecesText
     4300002: CounterDivider2
     4300004: CounterDivider3
@@ -316,6 +332,10 @@ ModelImporter:
     4300116: FoodCounter
     4300118: SandwichRoomFloor
     4300120: SandwichRoom
+    4300122: Loudspeaker1.003
+    4300124: Loudspeaker1.002
+    4300126: Loudspeaker1.001
+    4300128: Loudspeaker1
   materials:
     importMaterials: 1
     materialName: 0
