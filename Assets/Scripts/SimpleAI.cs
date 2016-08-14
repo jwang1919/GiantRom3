@@ -53,21 +53,17 @@ public class SimpleAI : MonoBehaviour {
       }
     }
 
-    Debug.DrawRay(transform.position+transform.up*offset, transform.forward * viewDistance,Color.red);
     RaycastHit hit;
     if (Physics.Raycast(transform.position +transform.up * offset, transform.forward, out hit, viewDistance)) {
       
-      Debug.Log(hit.collider.tag);
       if (hit.collider.tag == "Player") {
         if (spotted == false && source != null) {
-          Debug.Log("Who's there?");
           source.PlayOneShot(spottedClip);
           spotted = true;
         }
         navmesh.SetDestination(hit.transform.position);
         transform.LookAt(hit.transform);
         
-        Debug.DrawRay(transform.position, transform.forward * lengthToCapture);
         if (Physics.Raycast(transform.position, transform.forward, out hit, lengthToCapture)) {
           if (hit.collider.tag == "Player") {
             GameObject.FindGameObjectWithTag("SecondaryCamera").SetActive(true);
