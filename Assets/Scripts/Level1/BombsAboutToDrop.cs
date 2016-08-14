@@ -23,9 +23,11 @@ public class BombsAboutToDrop : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Time.timeSinceLevelLoad > seconds && state == AudioState.Ready) {
-            state = AudioState.PlayFarExplosion;
+            state = AudioState.PlaySiren;
+            GetComponent<AirRaidState>().enabled = true;
         }
         
+        /*
         switch (state) {
             case AudioState.PlayFarExplosion:
                 playSound(farExplosion);
@@ -55,11 +57,14 @@ public class BombsAboutToDrop : MonoBehaviour {
         if (state == AudioState.Done && !audioSource.isPlaying) {
             Destroy(gameObject);
         }
+        */
     }
 
+    /*
     private void playSound(AudioClip clip) {
         audioSource.Stop();
         audioSource.clip = clip;
         audioSource.Play();
-    } 
+    }
+    */ 
 }
