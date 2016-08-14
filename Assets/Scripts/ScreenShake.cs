@@ -5,6 +5,8 @@ public class ScreenShake : MonoBehaviour {
 
     public float shakeAmount = 0.7F;
     public float decreaseFactor = 1F;
+
+    public KeyCode shakeScreenKey = KeyCode.P;
     private bool flag = false;
 
     private float initialShakeAmount;
@@ -18,7 +20,7 @@ public class ScreenShake : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if (Input.GetKeyDown(KeyCode.P)) {
+	    if (Input.GetKeyDown(shakeScreenKey)) {
             flag = true;
         }
 
@@ -33,5 +35,10 @@ public class ScreenShake : MonoBehaviour {
                 shakeAmount = initialShakeAmount;
             }
         }
+    }
+
+    public void Shake()
+    {
+        flag = true;
     }
 }
