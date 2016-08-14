@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class InstructionsState : MonoBehaviour {
+public class CustomersArrivedState : MonoBehaviour {
 
+    public GameObject[] customers;
     public AudioClip clip;
     public int startTime = 0;
 
-    public GameObject[] instructions;
-
     void Start()
     {
-        // not used
+        if (customers == null || customers.Length == 0)
+        {
+            throw new System.Exception("At least one customer must be defined!");
+        }
     }
 
     void Update()
@@ -22,15 +24,17 @@ public class InstructionsState : MonoBehaviour {
     {
         if (timeline.GetCurrentTime() > startTime)
         {
-            foreach (GameObject instruction in instructions)
+            foreach (GameObject customer in customers)
             {
-                instruction.SetActive(true);
+                customer.SetActive(true);
             }
 
             audioSource.Stop();
             audioSource.clip = clip;
             audioSource.Play();
+
             timeline.AddOrder();
         }
+
     }
 }

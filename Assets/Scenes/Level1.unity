@@ -620,6 +620,7 @@ GameObject:
   - 4: {fileID: 255029814}
   - 212: {fileID: 255029813}
   - 114: {fileID: 255029815}
+  - 114: {fileID: 255029816}
   m_Layer: 0
   m_Name: the-sandwich-index2
   m_TagString: Untagged
@@ -685,6 +686,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seconds: 30
+--- !u!114 &255029816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 255029812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555972707947b67458ef032abdc0bd71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableOnStart: 1
 --- !u!1 &292081384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,6 +1868,109 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300014, guid: f2bd84edaeeb3f249b6e06c0d163b220, type: 3}
+--- !u!1 &768022953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 768022954}
+  - 82: {fileID: 768022955}
+  m_Layer: 0
+  m_Name: BackgroundMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &768022954
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 768022953}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1980335401}
+  m_RootOrder: 0
+--- !u!82 &768022955
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 768022953}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 881a3ea2a103d2a429908386f82a6815, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 200
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &867660518 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100118, guid: f2bd84edaeeb3f249b6e06c0d163b220, type: 3}
@@ -2275,6 +2391,7 @@ GameObject:
   - 212: {fileID: 919148765}
   - 114: {fileID: 919148767}
   - 65: {fileID: 919148768}
+  - 114: {fileID: 919148769}
   m_Layer: 0
   m_Name: rival-vinny
   m_TagString: Untagged
@@ -2352,6 +2469,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.73, y: 6.28, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &919148769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 919148764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555972707947b67458ef032abdc0bd71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableOnStart: 1
 --- !u!1 &938056417 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000010860367058, guid: 8f406bf276a92e24897a50e6eca1571b,
@@ -2368,8 +2497,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd544809f582d241adb46aa71964bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeAmount: 0.7
+  shakeAmount: 2.4
   decreaseFactor: 1
+  shakeScreenKey: 112
 --- !u!1 &951509041 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100014, guid: f2bd84edaeeb3f249b6e06c0d163b220, type: 3}
@@ -2547,6 +2677,7 @@ GameObject:
   - 4: {fileID: 986823871}
   - 212: {fileID: 986823870}
   - 114: {fileID: 986823872}
+  - 114: {fileID: 986823873}
   m_Layer: 0
   m_Name: the-sandwich-index3
   m_TagString: Untagged
@@ -2612,6 +2743,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seconds: 30
+--- !u!114 &986823873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 986823869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555972707947b67458ef032abdc0bd71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableOnStart: 1
 --- !u!1 &1036298071 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100116, guid: f2bd84edaeeb3f249b6e06c0d163b220, type: 3}
@@ -2936,20 +3079,32 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 34
+    m_FontSize: 24
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 3
+    m_BestFit: 1
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Welcome blah blah
-
-    press space to continue'
+  m_Text: "Policy sheet\r\n\r\nHey there! Welcome to Giant Bomb! It\u2019s a restaurant!
+    About sandwiches!\r\n\r\nWe\u2019re hell of stoked to have you on our team. The
+    position you\u2019ve been hired for is the lifeblood of our industry. That\u2019s
+    right! You\u2019re going to be our Senior Sandwich Editor! Before you begin, let\u2019s
+    go over some basic policy:\r\n\r\nAlways ask the customer what to do at every
+    step. \r\n\r\nIf they ask you to \u201Cmake it like the one in the picture,\u201D
+    a dumbfounded stare should prompt the customer to give you swift guidance. \r\n\r\nIf
+    they request double meat, repeat their request in wide-eyed awe, as if to ask
+    \u201CYou sure about that, Fatty?\u201D\r\n\r\nAsk them if they want their sandwich
+    toasted, even if it\u2019s clear that it should be. Who knows? Maybe the customer
+    wants cold, floppy, uncooked bacon. A good sandwich slave never assumes.\r\n\r\nRemind
+    the customer that guac is extra as you squeeze the flavorless green paste directly
+    from the plastic bag it was shipped in.\r\n\r\nYou can never have too much lettuce!\r\n\r\nWrap
+    the sandwich as loosely as possible. Otherwise, the fillings won\u2019t slide
+    to one side of the sandwich in our vertically oriented bags.\r"
 --- !u!222 &1278106496
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2967,6 +3122,7 @@ GameObject:
   - 212: {fileID: 1296208580}
   - 114: {fileID: 1296208582}
   - 65: {fileID: 1296208583}
+  - 114: {fileID: 1296208584}
   m_Layer: 0
   m_Name: rival-ryan
   m_TagString: Untagged
@@ -3044,6 +3200,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.11, y: 6.06, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1296208584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1296208579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555972707947b67458ef032abdc0bd71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableOnStart: 1
 --- !u!1 &1406426857 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100016, guid: f2bd84edaeeb3f249b6e06c0d163b220, type: 3}
@@ -3086,6 +3254,7 @@ GameObject:
   - 4: {fileID: 1482011735}
   - 212: {fileID: 1482011734}
   - 114: {fileID: 1482011736}
+  - 114: {fileID: 1482011737}
   m_Layer: 0
   m_Name: the-sandwich-index1
   m_TagString: Untagged
@@ -3151,6 +3320,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seconds: 30
+--- !u!114 &1482011737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1482011733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555972707947b67458ef032abdc0bd71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableOnStart: 1
 --- !u!1 &1487940107
 GameObject:
   m_ObjectHideFlags: 0
@@ -3165,6 +3346,7 @@ GameObject:
   - 114: {fileID: 1487940110}
   - 114: {fileID: 1487940113}
   - 65: {fileID: 1487940114}
+  - 114: {fileID: 1487940115}
   m_Layer: 0
   m_Name: rival-brad
   m_TagString: Untagged
@@ -3343,6 +3525,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.64, y: 5.88, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1487940115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1487940107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555972707947b67458ef032abdc0bd71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableOnStart: 1
 --- !u!1 &1493950499 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100070, guid: f2bd84edaeeb3f249b6e06c0d163b220, type: 3}
@@ -3890,6 +4084,7 @@ GameObject:
   - 114: {fileID: 1737077648}
   - 114: {fileID: 1737077651}
   - 65: {fileID: 1737077652}
+  - 114: {fileID: 1737077653}
   m_Layer: 0
   m_Name: rival-patrick
   m_TagString: Untagged
@@ -4082,6 +4277,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.51, y: 5.83, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1737077653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737077645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555972707947b67458ef032abdc0bd71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableOnStart: 1
 --- !u!1 &1740863841
 GameObject:
   m_ObjectHideFlags: 0
@@ -4096,6 +4303,7 @@ GameObject:
   - 114: {fileID: 1740863844}
   - 114: {fileID: 1740863847}
   - 65: {fileID: 1740863848}
+  - 114: {fileID: 1740863849}
   m_Layer: 0
   m_Name: rival-jeff
   m_TagString: Untagged
@@ -4274,6 +4482,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.78, y: 6.49, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1740863849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1740863841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555972707947b67458ef032abdc0bd71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableOnStart: 1
 --- !u!1 &1765797819 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100108, guid: f2bd84edaeeb3f249b6e06c0d163b220, type: 3}
@@ -4673,10 +4893,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 1980335401}
   - 82: {fileID: 1980335400}
-  - 114: {fileID: 1980335399}
   - 114: {fileID: 1980335408}
   - 114: {fileID: 1980335407}
   - 114: {fileID: 1980335406}
+  - 114: {fileID: 1980335399}
   - 114: {fileID: 1980335405}
   - 114: {fileID: 1980335404}
   - 114: {fileID: 1980335403}
@@ -4694,19 +4914,19 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1980335398}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1b4ae7b41b78ab4eafd1b38c53e5209, type: 3}
+  m_Script: {fileID: 11500000, guid: 83657ff6af792a24f9180c6ab5adfb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seconds: 5
-  memorize: {fileID: 8300000, guid: e7a20341e6c295e48be372da2c92003e, type: 3}
-  siren: {fileID: 8300000, guid: 433f5580f9c2d624c87747fab5a54b38, type: 3}
-  encouragement: {fileID: 8300000, guid: b7d3190631d8271479b420bb17495138, type: 3}
-  farExplosion: {fileID: 8300000, guid: 4fa24bece3a4bea4d8a48f0d147f6912, type: 3}
-  closeExplosion: {fileID: 8300000, guid: 9f911cc6be720a5439f7bea888a91221, type: 3}
-  state: 0
-  welcome: {fileID: 0}
+  customers:
+  - {fileID: 1487940107}
+  - {fileID: 1740863841}
+  - {fileID: 1737077645}
+  - {fileID: 1296208579}
+  - {fileID: 919148764}
+  clip: {fileID: 8300000, guid: 6d9c38ebee2f9d046ba53d13d19d9ade, type: 3}
+  startTime: 10
 --- !u!82 &1980335400
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4716,7 +4936,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e7a20341e6c295e48be372da2c92003e, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4791,7 +5011,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 20.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 768022954}
   m_Father: {fileID: 0}
   m_RootOrder: 24
 --- !u!114 &1980335402
@@ -4858,7 +5079,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: e7a20341e6c295e48be372da2c92003e, type: 3}
-  startTime: 10
+  startTime: 5
+  instructions:
+  - {fileID: 1482011733}
+  - {fileID: 255029812}
+  - {fileID: 986823869}
 --- !u!114 &1980335407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4872,7 +5097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   nextState: 0
-  stateOrder: 0000000003000000010000000200000004000000
+  stateOrder: 000000000100000004000000020000000300000005000000
 --- !u!114 &1980335408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4884,6 +5109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1a0a673e1ce494bb46ea7427c50632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyToStartTimeline: 32
 --- !u!1 &1989766738 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100008, guid: f2bd84edaeeb3f249b6e06c0d163b220, type: 3}
