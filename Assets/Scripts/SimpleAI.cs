@@ -8,8 +8,12 @@ public class SimpleAI : MonoBehaviour {
   private GameObject cam;
   public float routeSpeed;
   public Transform[] waypoints;
+  public string sceneToLoad = "SiloScene";
 
   public float minWaypointDist = .2f;
+  public float viewDistance = 30f;
+  public float lengthToCapture = 5f;
+  public float offset = 1f; 
   public AudioClip spottedClip;
 
   private int currentWaypoint = 0;
@@ -49,9 +53,9 @@ public class SimpleAI : MonoBehaviour {
       }
     }
 
-    Debug.DrawRay(transform.position, transform.forward * 30f,Color.red);
+    Debug.DrawRay(transform.position+transform.up*offset, transform.forward * viewDistance,Color.red);
     RaycastHit hit;
-    if (Physics.Raycast(transform.position, transform.forward, out hit, 30f)) {
+    if (Physics.Raycast(transform.position +transform.up * offset, transform.forward, out hit, viewDistance)) {
       
       Debug.Log(hit.collider.tag);
       if (hit.collider.tag == "Player") {
@@ -63,12 +67,12 @@ public class SimpleAI : MonoBehaviour {
         navmesh.SetDestination(hit.transform.position);
         transform.LookAt(hit.transform);
         
-        Debug.DrawRay(transform.position, transform.forward * 5f);
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 5f)) {
+        Debug.DrawRay(transform.position, transform.forward * lengthToCapture);
+        if (Physics.Raycast(transform.position, transform.forward, out hit, lengthToCapture)) {
           if (hit.collider.tag == "Player") {
             GameObject.FindGameObjectWithTag("SecondaryCamera").SetActive(true);
             Destroy(hit.collider.gameObject);
-            SceneManager.LoadScene("WaypointSystem");
+            SceneManager.LoadScene(sceneToLoad);
           }
         }
       } else {

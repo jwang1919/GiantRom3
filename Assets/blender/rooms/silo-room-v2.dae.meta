@@ -976,6 +976,86 @@ ModelImporter:
     4300380: Plane
     4300382: Ramp1
     4300384: Ramp3
+    6400000: Box1
+    6400002: Box10
+    6400004: Box11
+    6400006: Box12
+    6400008: Box13
+    6400010: Box14
+    6400012: Box15
+    6400014: Box16
+    6400016: Box17
+    6400018: Box18
+    6400020: Box2
+    6400022: Box3
+    6400024: Box4
+    6400026: Box5
+    6400028: Box6
+    6400030: Box7
+    6400032: Box8
+    6400034: Box9
+    6400036: CRTMonitor1
+    6400038: CRTMonitor10
+    6400040: CRTMonitor2
+    6400042: CRTMonitor3
+    6400044: CRTMonitor4
+    6400046: CRTMonitor5
+    6400048: CRTMonitor6
+    6400050: CRTMonitor7
+    6400052: CRTMonitor8
+    6400054: CRTMonitor9
+    6400056: IntroCompRoom
+    6400058: IntroFloor
+    6400060: IntroRoom
+    6400062: IntroTubeIn
+    6400064: IntroTubeOut
+    6400066: Ladder1
+    6400068: Ladder2
+    6400070: Objective
+    6400072: Pallet1
+    6400074: Pallet10
+    6400076: Pallet11
+    6400078: Pallet12
+    6400080: Pallet13
+    6400082: Pallet14
+    6400084: Pallet15
+    6400086: Pallet16
+    6400088: Pallet17
+    6400090: Pallet18
+    6400092: Pallet19
+    6400094: Pallet2
+    6400096: Pallet20
+    6400098: Pallet21
+    6400100: Pallet22
+    6400102: Pallet23
+    6400104: Pallet3
+    6400106: Pallet4
+    6400108: Pallet5
+    6400110: Pallet6
+    6400112: Pallet7
+    6400114: Pallet8
+    6400116: Pallet9
+    6400118: PlasticBarrel1
+    6400120: PlasticBarrel10
+    6400122: PlasticBarrel11
+    6400124: PlasticBarrel12
+    6400126: PlasticBarrel13
+    6400128: PlasticBarrel14
+    6400130: PlasticBarrel15
+    6400132: PlasticBarrel2
+    6400134: PlasticBarrel3
+    6400136: PlasticBarrel4
+    6400138: PlasticBarrel5
+    6400140: PlasticBarrel6
+    6400142: PlasticBarrel7
+    6400144: PlasticBarrel8
+    6400146: PlasticBarrel9
+    6400148: Ramp1
+    6400150: Ramp2
+    6400152: Ramp3
+    6400154: Silo1
+    6400156: Silo2
+    6400158: Silo3
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -1003,10 +1083,10 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
