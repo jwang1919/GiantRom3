@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MainLight
   - SecondaryCamera
+  - Welcome
   layers:
   - Default
   - TransparentFX
