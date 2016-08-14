@@ -5,6 +5,7 @@ public class Timeline : MonoBehaviour {
 
     public enum TimelineState {
         PlayInstructions,
+        CustomersArrived,
         PlaySiren,
         PlayEncouragment,
         PlayFarExplosion,
@@ -22,6 +23,7 @@ public class Timeline : MonoBehaviour {
 
     private AirRaidState arState;
     private InstructionsState iState;
+    private CustomersArrivedState caState;
     private EncouragementState eState;
     private FarExplosionsState feState;
     private CloseExplosionsState ceState;
@@ -42,6 +44,7 @@ public class Timeline : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         arState = GetComponent<AirRaidState>();
         iState = GetComponent<InstructionsState>();
+        caState = GetComponent<CustomersArrivedState>();
         eState = GetComponent<EncouragementState>();
         feState = GetComponent<FarExplosionsState>();
         ceState = GetComponent<CloseExplosionsState>();
@@ -55,6 +58,9 @@ public class Timeline : MonoBehaviour {
                 break;
             case TimelineState.PlaySiren:
                 arState.Run(this, audioSource);
+                break;
+            case TimelineState.CustomersArrived:
+                caState.Run(this, audioSource);
                 break;
             case TimelineState.PlayEncouragment:
                 eState.Run(this, audioSource);

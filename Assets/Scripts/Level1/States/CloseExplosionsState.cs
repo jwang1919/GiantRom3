@@ -6,9 +6,11 @@ public class CloseExplosionsState : MonoBehaviour {
     public AudioClip clip;
     public int startTime = 0;
 
+    private ScreenShake screenShake;
+
     void Start()
     {
-        // not used
+        screenShake = GameObject.FindGameObjectWithTag("Player").GetComponent<ScreenShake>();
     }
 
     void Update()
@@ -22,6 +24,7 @@ public class CloseExplosionsState : MonoBehaviour {
         {
             audioSource.Stop();
             audioSource.clip = clip;
+            screenShake.Shake();
             audioSource.Play();
             timeline.AddOrder();
         }
