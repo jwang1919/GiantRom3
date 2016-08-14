@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
@@ -82,6 +83,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
+          if (Input.GetKeyDown(KeyCode.Escape)) {
+            Application.Quit();
+          }
             if (paused)
             {
                 return;
