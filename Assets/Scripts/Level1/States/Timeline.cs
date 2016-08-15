@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Timeline : MonoBehaviour {
 
@@ -12,7 +11,7 @@ public class Timeline : MonoBehaviour {
         PlayCloseExplosion,
         Done
     }
-
+    
     public TimelineState currentState;
     public TimelineState nextState;
 
@@ -27,6 +26,7 @@ public class Timeline : MonoBehaviour {
     private EncouragementState eState;
     private FarExplosionsState feState;
     private CloseExplosionsState ceState;
+    private DoneState dState;
 
     private int numberStatesUsed;
 
@@ -37,7 +37,7 @@ public class Timeline : MonoBehaviour {
         if (stateOrder == null || stateOrder.Length == 0) {
             throw new System.Exception("At least one state must be defined!");
         }
-
+        
         nextState = stateOrder[0];
         numberStatesUsed = stateOrder.Length;
 
@@ -48,6 +48,7 @@ public class Timeline : MonoBehaviour {
         eState = GetComponent<EncouragementState>();
         feState = GetComponent<FarExplosionsState>();
         ceState = GetComponent<CloseExplosionsState>();
+        dState = GetComponent<DoneState>();
     }
 	
 	// Update is called once per frame
@@ -72,7 +73,7 @@ public class Timeline : MonoBehaviour {
                 ceState.Run(this, audioSource);
                 break;
             case TimelineState.Done:
-                this.enabled = false;
+                dState.Run(this);
                 break;
         }
 
@@ -99,4 +100,5 @@ public class Timeline : MonoBehaviour {
     {
         return currentTime;
     }
+
 }

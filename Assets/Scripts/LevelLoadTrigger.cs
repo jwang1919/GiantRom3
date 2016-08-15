@@ -13,7 +13,7 @@ public class LevelLoadTrigger : MonoBehaviour {
   public Image camEffect;
   // Use this for initialization
   void Awake() {
-    camEffect.CrossFadeAlpha(0f, 5f, true);
+    camEffect.CrossFadeAlpha(0.5f, 5f, true);
     buttonToPress.sprite = Resources.Load("keys/" + keyToPress, typeof(Sprite)) as Sprite;
   }
 
@@ -45,7 +45,7 @@ public class LevelLoadTrigger : MonoBehaviour {
     //camEffect.enabled = true;
     AsyncOperation async = SceneManager.LoadSceneAsync(level);
     while (!async.isDone) {
-      camEffect.CrossFadeAlpha(1f, async.progress / 50, false);
+      //camEffect.CrossFadeAlpha(1f, async.progress / 50, false);
       yield return null;
     }
   }
