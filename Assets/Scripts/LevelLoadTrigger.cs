@@ -10,10 +10,10 @@ public class LevelLoadTrigger : MonoBehaviour {
   public Text buttonPressInteract;
   public Image buttonToPress;
   bool toggle;
-  public Light camEffect;
+  public Image camEffect;
   // Use this for initialization
   void Awake() {
-    
+    camEffect.CrossFadeAlpha(0f, 5f, true);
     buttonToPress.sprite = Resources.Load("keys/" + keyToPress, typeof(Sprite)) as Sprite;
   }
 
@@ -41,14 +41,11 @@ public class LevelLoadTrigger : MonoBehaviour {
   }
 
   IEnumerator CameraEffects(string level) {
-    for (int i = 0; i < 20; i++) {
-      camEffect.intensity = i;
-    }
+    //camEffect.CrossFadeAlpha(1f, 5f, true);
+    //camEffect.enabled = true;
     AsyncOperation async = SceneManager.LoadSceneAsync(level);
     while (!async.isDone) {
-      
-      //if(camEffect.bloomIntensity <=4 && camEffect.bloomIntensity >=-4)
-      camEffect.intensity -= async.progress * 100;
+      camEffect.CrossFadeAlpha(1f, async.progress / 50, false);
       yield return null;
     }
   }
