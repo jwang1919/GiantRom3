@@ -1246,7 +1246,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000012339149564, guid: 8f406bf276a92e24897a50e6eca1571b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -51.18
+      value: -34.95
       objectReference: {fileID: 0}
     - target: {fileID: 4000012339149564, guid: 8f406bf276a92e24897a50e6eca1571b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2019,6 +2019,7 @@ MonoBehaviour:
   keyToPress: e
   buttonPressInteract: {fileID: 306125936}
   buttonToPress: {fileID: 1867559190}
+  climb: 1
 --- !u!1 &1420479237 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100016, guid: d6403f937a3e9bd49af6ebfed740c006, type: 3}
@@ -2200,6 +2201,7 @@ MonoBehaviour:
   keyToPress: e
   buttonPressInteract: {fileID: 306125936}
   buttonToPress: {fileID: 1867559190}
+  climb: 1
 --- !u!65 &1597246142
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2210,8 +2212,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: -2860.5718, y: 28267.562, z: 226.6677}
-  m_Center: {x: 838.4219, y: -2666.1958, z: -0.00094644947}
+  m_Size: {x: -660.92444, y: 28267.564, z: 226.6677}
+  m_Center: {x: 430.4608, y: -2666.1956, z: -0.0009464496}
 --- !u!1 &1621790950
 GameObject:
   m_ObjectHideFlags: 0
@@ -3421,10 +3423,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2091737258}
-  m_LocalRotation: {x: -0, y: -0, z: 0.1573259, w: 0.98754674}
-  m_LocalPosition: {x: 113.74, y: 120.13, z: -31.98}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 114, y: 119.95, z: -31.98}
   m_LocalScale: {x: 2.971586, y: 2.9715893, z: 2.9715893}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 17.800001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 22
