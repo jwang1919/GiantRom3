@@ -201,6 +201,7 @@ ModelImporter:
     100386: Ramp1
     100388: Ramp2
     100390: Ramp3
+    100392: Cube
     400000: _ndFloor-Box1
     400002: _ndFloor-Box10
     400004: _ndFloor-Box11
@@ -397,6 +398,7 @@ ModelImporter:
     400386: Ramp1
     400388: Ramp2
     400390: Ramp3
+    400392: Cube
     2300000: _ndFloor-Box1
     2300002: _ndFloor-Box10
     2300004: _ndFloor-Box11
@@ -590,6 +592,7 @@ ModelImporter:
     2300380: Ramp1
     2300382: Ramp2
     2300384: Ramp3
+    2300386: Cube
     3300000: _ndFloor-Box1
     3300002: _ndFloor-Box10
     3300004: _ndFloor-Box11
@@ -783,6 +786,7 @@ ModelImporter:
     3300380: Ramp1
     3300382: Ramp2
     3300384: Ramp3
+    3300386: Cube
     4300000: IntroFloor
     4300002: Objective
     4300004: _ndFloor-Box1
@@ -976,6 +980,7 @@ ModelImporter:
     4300380: Plane
     4300382: Ramp1
     4300384: Ramp3
+    4300386: Cube
     6400000: Box1
     6400002: Box10
     6400004: Box11
@@ -1056,6 +1061,7 @@ ModelImporter:
     6400154: Silo1
     6400156: Silo2
     6400158: Silo3
+    6400160: Cube
     9500000: //RootNode
   materials:
     importMaterials: 1
