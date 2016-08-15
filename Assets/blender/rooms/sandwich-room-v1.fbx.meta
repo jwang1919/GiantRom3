@@ -73,6 +73,7 @@ ModelImporter:
     100130: Loudspeaker1.001
     100132: Loudspeaker1.002
     100134: Loudspeaker1.003
+    100136: Cube
     400000: AmericanCheeseText
     400002: AmericanHolder
     400004: BBQSauce
@@ -141,6 +142,7 @@ ModelImporter:
     400130: Loudspeaker1.001
     400132: Loudspeaker1.002
     400134: Loudspeaker1.003
+    400136: Cube
     2300000: AmericanCheeseText
     2300002: AmericanHolder
     2300004: BBQSauce
@@ -206,6 +208,7 @@ ModelImporter:
     2300124: Loudspeaker1.001
     2300126: Loudspeaker1.002
     2300128: Loudspeaker1.003
+    2300130: Cube
     3300000: AmericanCheeseText
     3300002: AmericanHolder
     3300004: BBQSauce
@@ -271,6 +274,7 @@ ModelImporter:
     3300124: Loudspeaker1.001
     3300126: Loudspeaker1.002
     3300128: Loudspeaker1.003
+    3300130: Cube
     4300000: DogFecesText
     4300002: CounterDivider2
     4300004: CounterDivider3
@@ -336,6 +340,7 @@ ModelImporter:
     4300124: Loudspeaker1.002
     4300126: Loudspeaker1.001
     4300128: Loudspeaker1
+    4300130: Cube
   materials:
     importMaterials: 1
     materialName: 0
