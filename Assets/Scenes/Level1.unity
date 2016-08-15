@@ -584,6 +584,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012615566292, guid: 814dc164f9ce12b40a8d86fd3346c5f9,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000011084794226, guid: 814dc164f9ce12b40a8d86fd3346c5f9, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 814dc164f9ce12b40a8d86fd3346c5f9, type: 2}
@@ -3322,7 +3327,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 26
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
