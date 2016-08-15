@@ -4,6 +4,7 @@ using System.Collections;
 public class CustomersArrivedState : MonoBehaviour {
 
     public GameObject[] customers;
+    public GameObject orderScreen;
     public AudioClip clip;
     public int startTime = 0;
 
@@ -28,6 +29,7 @@ public class CustomersArrivedState : MonoBehaviour {
             {
                 customer.SetActive(true);
             }
+            orderScreen.SetActive(true);
 
             audioSource.Stop();
             audioSource.clip = clip;
