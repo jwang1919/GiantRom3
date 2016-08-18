@@ -1721,6 +1721,11 @@ Prefab:
       propertyPath: keyToPress
       value: e
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012266474178, guid: 1355721f8e8c066429eee1c92cffdb0b,
+        type: 2}
+      propertyPath: levelToLoad
+      value: PodcastRoomScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1355721f8e8c066429eee1c92cffdb0b, type: 2}
   m_IsPrefabParent: 0

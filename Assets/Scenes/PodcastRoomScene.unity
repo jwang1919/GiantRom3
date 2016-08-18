@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692528, g: 0.4967872, b: 0.5750856, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692558, g: 0.49678743, b: 0.57508624, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69a836815e16374280e61911d47ad32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movie: {fileID: 15200000, guid: d31e004de1dc2dc4780304a51361530b, type: 3}
+  movie: {fileID: 15200000, guid: f851c42944ff228429ccce7f2beb48a8, type: 3}
 --- !u!114 &499578248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -670,7 +670,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
