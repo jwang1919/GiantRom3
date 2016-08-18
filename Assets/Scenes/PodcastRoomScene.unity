@@ -561,6 +561,7 @@ GameObject:
   - 114: {fileID: 499578248}
   - 114: {fileID: 499578247}
   - 135: {fileID: 499578252}
+  - 114: {fileID: 499578253}
   m_Layer: 0
   m_Name: Projector
   m_TagString: Untagged
@@ -732,6 +733,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 4.629785
   m_Center: {x: -3.07692, y: -0.43826294, z: -2.552365}
+--- !u!114 &499578253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 499578245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346717fbdd0775449a35b6d36b0e9cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &503568460
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,11 +2645,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000013180933136, guid: 814dc164f9ce12b40a8d86fd3346c5f9, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1000012070688428, guid: 814dc164f9ce12b40a8d86fd3346c5f9, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011141916110, guid: 814dc164f9ce12b40a8d86fd3346c5f9,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011141916110, guid: 814dc164f9ce12b40a8d86fd3346c5f9,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011141916110, guid: 814dc164f9ce12b40a8d86fd3346c5f9,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011141916110, guid: 814dc164f9ce12b40a8d86fd3346c5f9,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000011084794226, guid: 814dc164f9ce12b40a8d86fd3346c5f9, type: 2}
