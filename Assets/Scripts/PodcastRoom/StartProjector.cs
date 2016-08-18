@@ -8,6 +8,7 @@ public class StartProjector : MonoBehaviour {
 
     private GameObject screen;
     private AudioSource audioSource;
+    private CheckVideo cv;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,7 @@ public class StartProjector : MonoBehaviour {
         screen.GetComponent<Renderer>().material.mainTexture = movie;
         audioSource = screen.GetComponent<AudioSource>();
         audioSource.clip = movie.audioClip;
+        //cv = GetComponent<CheckVideo>();
     }
 
     void OnTriggerStay(Collider c)
@@ -29,6 +31,7 @@ public class StartProjector : MonoBehaviour {
             Debug.Log("Playing videos");
             audioSource.Play();
             movie.Play();
+            //StartCoroutine(cv.WaitingForMovie(movie.duration, cv.OnWaitFinish));
         }
     }
 }

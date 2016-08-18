@@ -16,20 +16,20 @@ public class CheckVideo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-    if (movie.movie.isPlaying) {
-      StartCoroutine(WaitingForMovie(movie.movie.duration, OnWaitFinish));
-    }
+    //if (movie.movie.isPlaying) {
+    //  StartCoroutine(WaitingForMovie(movie.movie.duration, OnWaitFinish));
+    //}
 	}
-  void OnWaitFinish() {
+  public void OnWaitFinish() {
     load.CrossFadeAlpha(1f, 3f, true);
     SceneManager.LoadScene(levelToLoad);
   }
 
-  IEnumerator WaitingForMovie(float duration, System.Action callback){
+  public IEnumerator WaitingForMovie(float duration, System.Action callback){
     while (movie.movie.isPlaying) {
       yield return 0;
     }
-    if (callback != null) callback();
-    
+    callback();
+    yield break;
   }
 }
