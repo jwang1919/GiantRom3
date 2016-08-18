@@ -1,23 +1,20 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
 public class StartTimeline : MonoBehaviour {
-
-    public KeyCode keyToStartTimeline = KeyCode.Space;
-
-    private Text welcomeText;
+    
+    private GameObject welcomeText;
 
 	// Use this for initialization
 	void Start () {
-	    welcomeText = GameObject.FindGameObjectWithTag("Welcome").GetComponent<Text>();
+	    welcomeText = GameObject.FindGameObjectWithTag("Welcome");
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(keyToStartTimeline))
+        if (Input.anyKey)
         {
-            welcomeText.enabled = false;
+            welcomeText.SetActive(false);
             GetComponent<Timeline>().enabled = true;
             this.enabled = false;
         }

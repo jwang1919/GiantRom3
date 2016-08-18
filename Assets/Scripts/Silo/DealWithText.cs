@@ -1,17 +1,13 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
-using UnityStandardAssets.Characters.FirstPerson;
 public class DealWithText : MonoBehaviour
 {
 
-    Text flav;
+    private GameObject flav;
     bool flavIsOn;
     // Use this for initialization
     void Start()
     {
-        FirstPersonController.pause();
-        flav = GameObject.Find("FlavorText").GetComponent<Text>();
+        flav = GameObject.Find("FlavorText");
         flavIsOn = true;
     }
 
@@ -20,18 +16,16 @@ public class DealWithText : MonoBehaviour
     {
         if (flavIsOn)
         {
-
             RidText();
         }
     }
 
     void RidText()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.anyKey)
         {
-            flav.enabled = false;
+            flav.SetActive(false);
             flavIsOn = !flavIsOn;
-            FirstPersonController.unpause();
         }
     }
 }
