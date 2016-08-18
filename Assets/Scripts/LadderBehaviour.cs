@@ -33,7 +33,7 @@ public class LadderBehaviour: MonoBehaviour {
     {
         if (c.tag == "Player" && Input.GetKey(keyToPress))
         {
-            player.transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 5f);
+            player.transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 6f);
         }
     }
     
