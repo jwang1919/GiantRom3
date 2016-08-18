@@ -5,13 +5,18 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class DealWithText : MonoBehaviour
 {
 
-    Text flav;
+    Image flav;
+    Text flavT;
     bool flavIsOn;
+
+    public KeyCode keyToStart = KeyCode.Space;
     // Use this for initialization
     void Start()
     {
         FirstPersonController.pause();
-        flav = GameObject.Find("FlavorText").GetComponent<Text>();
+        flav = GameObject.Find("FlavorText").GetComponent<Image>();
+        flavT = flav.GetComponentInChildren<Text>();
+        flavT.text = "Press " + keyToStart.ToString().ToUpper() + " to start";
         flavIsOn = true;
     }
 
@@ -27,9 +32,10 @@ public class DealWithText : MonoBehaviour
 
     void RidText()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(keyToStart))
         {
             flav.enabled = false;
+            flavT.enabled = false;
             flavIsOn = !flavIsOn;
             FirstPersonController.unpause();
         }

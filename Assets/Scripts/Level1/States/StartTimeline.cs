@@ -6,18 +6,21 @@ public class StartTimeline : MonoBehaviour {
 
     public KeyCode keyToStartTimeline = KeyCode.Space;
 
-    private Text welcomeText;
-
+    private Image welcomeImage;
+    private Text welcomeImageText;
 	// Use this for initialization
 	void Start () {
-	    welcomeText = GameObject.FindGameObjectWithTag("Welcome").GetComponent<Text>();
+	    welcomeImage = GameObject.FindGameObjectWithTag("Welcome").GetComponent<Image>();
+      welcomeImageText = welcomeImage.GetComponentInChildren<Text>();
+      welcomeImageText.text = "Press " + keyToStartTimeline.ToString().ToUpper() +" to start";
     }
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(keyToStartTimeline))
         {
-            welcomeText.enabled = false;
+            welcomeImage.enabled = false;
+            welcomeImageText.enabled = false;
             GetComponent<Timeline>().enabled = true;
             this.enabled = false;
         }
